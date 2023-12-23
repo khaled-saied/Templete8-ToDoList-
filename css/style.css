@@ -113,10 +113,14 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 445px){
-  .add button{
-    margin-left: 96px;
+@media screen and (max-width: 576px) {
+  .add button {
+    margin-left: 104px;
     margin-top: 10px;
     width: 60px;
+  }
+
+  .add input {
+    width: 90%;
   }
 }
