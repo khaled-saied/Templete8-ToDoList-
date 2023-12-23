@@ -12,9 +12,9 @@ let btnSubmit = document.getElementById("btnSubmit");
 btnSubmit.addEventListener("click", addOrUpdateItem);
 
 // Function
+
 let data = [];
 if (localStorage.data != null) {
-  showDome.style.display = 'block';
   data = JSON.parse(localStorage.data);
   tmp = data[data.length - 1].id;
 } else {
@@ -60,9 +60,14 @@ function addOrUpdateItem() {
 
 //Show
 function showData() {
-  let show = data.map(
-    (ele, index) =>
-      `<div class="item">
+  if (data.length === 0) {
+    showDome.style.display = "none"; 
+  } else {
+    showDome.style.display = "block";
+
+    let show = data.map(
+      (ele, index) =>
+        `<div class="item">
       <div class="text">
         <p class="id">${index + 1}</p>
         <p style="display: block;">${ele.value}</p>
@@ -76,8 +81,9 @@ function showData() {
         })}></i>
       </div>
     </div>`
-  );
-  showDome.innerHTML = show.join("");
+    );
+    showDome.innerHTML = show.join("");
+  }
 }
 
 // Delete

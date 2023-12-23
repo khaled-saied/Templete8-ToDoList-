@@ -59,8 +59,7 @@
   border-radius: 4px;
   margin-top: 20px;
   padding-bottom: 10px;
-  /* visibility: hidden; */
-  display: none;
+  /* display: block; */
 }
 
 .text {
@@ -112,4 +111,12 @@
 
 .icon i {
   cursor: pointer;
+}
+
+@media screen and (max-width: 445px){
+  .add button{
+    margin-left: 96px;
+    margin-top: 10px;
+    width: 60px;
+  }
 }
